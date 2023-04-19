@@ -31,7 +31,7 @@ server.get("/", (request, response) => {
 //book - get
 
 server.get("/book", (request, response) => {
-  let urlSmartzones = urlAPI + '/smartzones'
+  let urlSmartzones = `${process.env.API_URL}/smartzones`
   fetchJson(urlSmartzones).then((smartzones) => {
     let id = request.query.id
     let url = `${process.env.API_URL}/reservations?id=${id}`
@@ -45,8 +45,33 @@ server.get("/book", (request, response) => {
 
 //book - post
 
+server.post('/book', (request, response) => {
+  const url = `${process.env.API_URL}/reservations`
+  request.body.timeStart = request.body.dateStart + 'T' + request.body.timeStart + ':00Z';
+  request.body.timeEnd = request.body.dateEnd + 'T' + request.body.timeEnd + ':00Z';
 
+  postJson(url, request.body).then((data) => {
+    let newReservation = { ... request.body }
 
+    if (data.data.id.length > 0) {
+      response.redirect('/book?reservationPosted=true') 
+    } else {
+      const errorMessage = data.message + "Some fields are not filled in (correctly)."
+      const newData = { error: errorMessage, values: newReservation }
+      
+      let urlSmartzones = urlAPI + '/smartzones'
+        fetchJson(urlSmartzones).then((smartzones) => {
+          let id = request.query.id
+          let time = request.query.time
+          let url = `${process.env.API_URL}/reservations?id=${id}`
+          fetchJson(url).then((reservations) => {
+            let data = {smartzones: smartzones, reservations: reservations, newData}
+            response.render("book", {smartzones: data.smartzones.smartzones, selectedSmartzoneId: id, time: time})
+          })
+        })
+    }
+  })
+})
 
 
 //poortnummer instellen
