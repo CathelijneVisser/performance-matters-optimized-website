@@ -59,7 +59,7 @@ server.post('/book', (request, response) => {
       const errorMessage = data.message + "Some fields are not filled in (correctly)."
       const newData = { error: errorMessage, values: newReservation }
       
-      let urlSmartzones = urlAPI + '/smartzones'
+      let urlSmartzones = `${process.env.API_URL}/smartzones`
         fetchJson(urlSmartzones).then((smartzones) => {
           let id = request.query.id
           let time = request.query.time
