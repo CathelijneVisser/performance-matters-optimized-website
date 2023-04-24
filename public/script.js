@@ -1,5 +1,5 @@
 // Huidige datum automatisch inladen
-const dateInput = document.getElementById('date-from');
+const dateInput = document.getElementById("date-from");
 const dateOutput = document.getElementById("date-till");
 
 // Automatisch einddatum meeveranderen
@@ -19,3 +19,13 @@ inputs.forEach(input => {
         false 
     ); 
 });
+
+// More info button
+const infoIcons = document.querySelectorAll(".info-icon")
+const infoTexts = document.querySelectorAll(".more-info")
+
+infoIcons.forEach(infoIcon => {
+    infoIcon.addEventListener("click", () => {
+        infoTexts.classList.toggle("show-more-info")
+    })
+})

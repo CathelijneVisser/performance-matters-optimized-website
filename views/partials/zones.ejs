@@ -49,6 +49,12 @@
                     </div>
                 </div>
             </article>
+
+            <article class="more-info">
+                <p><span>Size:</span> <%= smartzone.size %> parkingspace</p>
+                <p><span>Utilization:</span> <%= smartzone.utilization %></p>
+                <p><span>Description:</span> <%- smartzone.description.html %></p>
+            </article>
         <% }) %>
  
     </section>
