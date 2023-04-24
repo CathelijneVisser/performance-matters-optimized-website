@@ -117,7 +117,7 @@ header {
 }
 
 .sz-card {
-    width: 20rem;
+    width: auto;
     height: 10rem;
     display: flex;
     justify-content: space-between;
@@ -178,7 +178,7 @@ h2 {
 .nav-list {
     list-style: none;
     display: flex;
-    padding: 0.7rem 0.5rem 0.5rem;
+    padding: 1rem;
     justify-content: space-between;
     background-color: var(--bg-grey);
 }
