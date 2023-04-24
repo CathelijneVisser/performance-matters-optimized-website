@@ -86,8 +86,6 @@ span {
 }
 
 header {
-    height: 7rem;
-    width: 22rem;
     background-color: var(--bg-grey);
     display: flex;
     justify-content: center;
@@ -101,8 +99,6 @@ header {
 }
 
 .menu-bar {
-    width: 22rem;
-    height: auto;
     display: flex;
     flex-direction: column;
     padding: 0 1rem;
@@ -120,7 +116,7 @@ header {
     width: auto;
     height: 10rem;
     display: flex;
-    justify-content: space-between;
+    gap: 1rem;
     border-radius: 1rem;
     margin-bottom: 1rem;
     box-shadow: 1px 3px 2px #bbbbbb;
@@ -138,7 +134,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 12rem;
+    width: 15rem;
     padding: 0.5rem 0;
 }
 
@@ -152,8 +148,17 @@ h2 {
     font-size: 1.2rem;
 }
 
-.buttons {
+.bottom-row-card {
+    display: flex;
     flex-direction: row;
+    gap: 0.5rem;
+    justify-content: space-between;
+    padding-right: 1rem;
+}
+
+.info-icon {
+    all: unset;
+    cursor: pointer;
 }
 
 .button-book-now, .button-book-later, .submit-button, .submit-button::before {
@@ -162,7 +167,7 @@ h2 {
     border: none;
     font-weight: 600;
     border-radius: 1rem;
-    padding: 0.1rem 0.7rem;
+    padding: 0 0.7rem;
     cursor: pointer;
     text-decoration: none;
 }
@@ -178,7 +183,7 @@ h2 {
 .nav-list {
     list-style: none;
     display: flex;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     justify-content: space-between;
     background-color: var(--bg-grey);
 }
@@ -302,7 +307,7 @@ input.invalid, select.invalid {
 /* Grid */
 body {
     display: grid;
-    grid-template-columns: 22rem auto;
+    grid-template-columns: 25rem auto;
     grid-template-rows: 7rem auto 4rem;
 }
 
