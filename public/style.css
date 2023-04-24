@@ -98,6 +98,8 @@ header {
     height: auto;
 }
 
+/* Smartzones */
+
 .menu-bar {
     display: flex;
     flex-direction: column;
@@ -121,6 +123,15 @@ header {
     margin-bottom: 1rem;
     box-shadow: 1px 3px 2px #bbbbbb;
     background-color: var(--white-color);
+    position: relative;
+}
+
+.info-icon {
+    all: unset;
+    cursor: pointer;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
 }
 
 .sz-card img {
@@ -154,11 +165,6 @@ h2 {
     gap: 0.5rem;
     justify-content: space-between;
     padding-right: 1rem;
-}
-
-.info-icon {
-    all: unset;
-    cursor: pointer;
 }
 
 .button-book-now, .button-book-later, .submit-button, .submit-button::before {
