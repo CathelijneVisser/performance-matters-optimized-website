@@ -3,8 +3,10 @@ const dateInput = document.getElementById("date-from");
 const dateOutput = document.getElementById("date-till");
 
 // Automatisch einddatum meeveranderen
-dateInput.onchange = () => {
-    dateOutput.value = dateInput.value
+if(dateInput){
+    dateInput.onchange = () => {
+        dateOutput.value = dateInput.value
+    }
 }
 
 // Invalid
@@ -22,10 +24,19 @@ inputs.forEach(input => {
 
 // More info button
 const infoIcons = document.querySelectorAll(".info-icon")
-const infoTexts = document.querySelectorAll(".more-info")
+// const infoTexts = document.querySelector(".sz-id-<%= smartzone.id %>")
 
 infoIcons.forEach(infoIcon => {
-    infoIcon.addEventListener("click", () => {
-        infoTexts.classList.toggle("show-more-info")
+    infoIcon.addEventListener("click", (event) => {
+        const moreInfoText = document.getElementById(infoIcon.dataset.szid);
+
+        moreInfoText.classList.toggle("show-more-info")
+        console.log(moreInfoText.offsetHeight)
+        // zoek het sz-id uit de dataset van het infoIcon adhv event.target
+        // combineer het id met sz-id-[betreffende-id]
+        // document.querysel op de class in stap 2
+        // toggle de gewenste class op het element
+
+
     })
 })

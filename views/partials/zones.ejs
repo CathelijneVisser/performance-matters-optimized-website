@@ -5,7 +5,7 @@
             <article class="sz-card">
                 <div class="card-left-side">
                     <img src="<%- smartzone.image[0].url %>" alt="Foto van smartzone <%= smartzone.name %>" loading="lazy">
-                    <button class="info-icon">
+                    <button class="info-icon" data-szId="<%= smartzone.id %>">
                         <svg width="25" height="25" viewBox="0 0 21 21" fill="#fff" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8.91667 8.60671L8.97437 8.57616C9.15484 8.47829 9.35737 8.43861 9.55797 8.46181C9.75858 8.48502 9.94885 8.57014 10.1063 8.7071C10.2637 8.84406 10.3816 9.02711 10.4462 9.23459C10.5107 9.44207 10.5191 9.66528 10.4704 9.87779L9.474 14.2104C9.42494 14.4231 9.4331 14.6465 9.49749 14.8542C9.56189 15.062 9.67982 15.2453 9.8373 15.3825C9.99479 15.5196 10.1852 15.6049 10.386 15.6282C10.5868 15.6514 10.7895 15.6116 10.9701 15.5136L11.0278 15.4815M9.97222 5.60672H9.98348V5.61894H9.97222V5.60672ZM20 10.5C20 11.7476 19.7543 12.9829 19.2769 14.1355C18.7994 15.2881 18.0997 16.3354 17.2175 17.2175C16.3354 18.0997 15.2881 18.7994 14.1355 19.2769C12.9829 19.7543 11.7476 20 10.5 20C9.25244 20 8.0171 19.7543 6.86451 19.2769C5.71191 18.7994 4.66464 18.0997 3.78249 17.2175C2.90033 16.3354 2.20056 15.2881 1.72314 14.1355C1.24572 12.9829 1 11.7476 1 10.5C1 7.98045 2.00089 5.56407 3.78249 3.78249C5.56408 2.0009 7.98044 1 10.5 1C13.0196 1 15.4359 2.0009 17.2175 3.78249C18.9991 5.56407 20 7.98045 20 10.5Z" stroke="#656672" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                         </svg>
@@ -50,7 +50,7 @@
                 </div>
             </article>
 
-            <article class="more-info">
+            <article id="<%= smartzone.id %>" class="more-info">
                 <p><span>Size:</span> <%= smartzone.size %> parkingspace</p>
                 <p><span>Utilization:</span> <%= smartzone.utilization %></p>
                 <p><span>Description:</span> <%- smartzone.description.html %></p>
