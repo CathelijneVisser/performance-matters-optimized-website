@@ -151,13 +151,36 @@ header {
     flex-direction: column;
     justify-content: space-between;
     width: 15rem;
-    padding: 0.5rem 0;
+    padding: 0.5rem;
+    padding-left: 0;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .availability {
     display: flex;
     gap: 0.5rem;
     align-items: center;
+}
+
+.favorite-button {
+    all: unset;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.favorite-button > svg {
+    fill: transparent;
+}
+
+.heart-animation {
+    animation: like 1s ease-in-out;
 }
 
 h2 {
@@ -372,4 +395,29 @@ nav {
 
 .map, .book {
     grid-area: 1 / 2 / 4 / 3 ;
+}
+
+/* Animation */
+
+@keyframes like {
+    0% {
+        fill: transparent;
+        scale: 1;
+    }
+
+    30% {
+        scale: 0.9;
+        rotate: -10deg;
+    }
+
+    60% {
+        scale: 1.2;
+        rotate: 5deg;
+    }
+
+    100% {
+        fill: var(--purple-color);
+        scale: 1;
+        rotate: 0;
+    }
 }
