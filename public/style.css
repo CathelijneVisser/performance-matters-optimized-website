@@ -175,7 +175,7 @@ header {
     cursor: pointer;
 }
 
-.favorite-button > svg {
+.heart-icon path:first-of-type {
     fill: transparent;
 }
 
@@ -401,7 +401,6 @@ nav {
 
 @keyframes like {
     0% {
-        fill: transparent;
         scale: 1;
     }
 

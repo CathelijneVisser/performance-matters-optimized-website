@@ -36,8 +36,6 @@ infoIcons.forEach(infoIcon => {
         // combineer het id met sz-id-[betreffende-id]
         // document.querysel op de class in stap 2
         // toggle de gewenste class op het element
-
-
     })
 })
 
