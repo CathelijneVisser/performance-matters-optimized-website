@@ -192,7 +192,6 @@ h2 {
     flex-direction: row;
     gap: 0.5rem;
     justify-content: space-between;
-    padding-right: 1rem;
 }
 
 .button-book-now, .button-book-later, .submit-button, .submit-button::before {
