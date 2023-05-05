@@ -93,6 +93,13 @@ header {
     border-radius: 1rem 0 0 0;
 }
 
+button {
+    border: none;
+    background: none;
+    border-radius: 0;
+    padding: 0;
+}
+
 .logo {
     width: 5rem;
     height: auto;
@@ -132,7 +139,6 @@ header {
 }
 
 .info-icon {
-    all: unset;
     cursor: pointer;
     position: absolute;
     left: 0.5rem;
@@ -168,7 +174,9 @@ header {
 }
 
 .favorite-button, .search-button {
-    all: unset;
+    border: none;
+    background: none;
+    border-radius: 0;
     height: fit-content;
     display: flex;
     align-items: center;
