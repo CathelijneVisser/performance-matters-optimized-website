@@ -50,3 +50,15 @@ likeButtons.forEach(likeButton => {
         likeButton.classList.toggle("heart-animation")
     }
 })
+
+// Search button
+const searchButtons = document.querySelectorAll(".search-button")
+
+searchButtons.forEach(searchButton => {
+    searchButton.addEventListener("click", searchAnimation)
+    searchButton.addEventListener("animationend", searchAnimation)
+    
+    function searchAnimation () {
+        searchButton.classList.toggle("search-animation")
+    }
+})
