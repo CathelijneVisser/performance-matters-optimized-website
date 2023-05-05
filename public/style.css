@@ -174,9 +174,6 @@ button {
 }
 
 .favorite-button, .search-button {
-    border: none;
-    background: none;
-    border-radius: 0;
     height: fit-content;
     display: flex;
     align-items: center;
@@ -223,7 +220,7 @@ h2 {
     animation: search 1s ease-in-out;
 }
 
-/* Meer info */
+/* More info slide */
 .more-info {
     background-color: var(--white-color);
     min-height: 10rem;
