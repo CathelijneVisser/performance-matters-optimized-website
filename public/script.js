@@ -1,10 +1,12 @@
 // Huidige datum automatisch inladen
-const dateInput = document.getElementById('date-from');
+const dateInput = document.getElementById("date-from");
 const dateOutput = document.getElementById("date-till");
 
 // Automatisch einddatum meeveranderen
-dateInput.onchange = () => {
-    dateOutput.value = dateInput.value
+if(dateInput){
+    dateInput.onchange = () => {
+        dateOutput.value = dateInput.value
+    }
 }
 
 // Invalid
@@ -19,3 +21,44 @@ inputs.forEach(input => {
         false 
     ); 
 });
+
+// More info button
+const infoIcons = document.querySelectorAll(".info-icon")
+// const infoTexts = document.querySelector(".sz-id-<%= smartzone.id %>")
+
+infoIcons.forEach(infoIcon => {
+    infoIcon.addEventListener("click", (event) => {
+        const moreInfoText = document.getElementById(infoIcon.dataset.szid);
+
+        moreInfoText.classList.toggle("show-more-info")
+        console.log(moreInfoText.offsetHeight)
+        // zoek het sz-id uit de dataset van het infoIcon adhv event.target
+        // combineer het id met sz-id-[betreffende-id]
+        // document.querysel op de class in stap 2
+        // toggle de gewenste class op het element
+    })
+})
+
+// Like button
+const likeButtons = document.querySelectorAll(".favorite-button")
+
+likeButtons.forEach(likeButton => {
+    likeButton.addEventListener("click", heartAnimation)
+    // likeButton.addEventListener("animationend", heartAnimation)
+    
+    function heartAnimation () {
+        likeButton.classList.toggle("heart-animation")
+    }
+})
+
+// Search button
+const searchButtons = document.querySelectorAll(".search-button")
+
+searchButtons.forEach(searchButton => {
+    searchButton.addEventListener("click", searchAnimation)
+    searchButton.addEventListener("animationend", searchAnimation)
+    
+    function searchAnimation () {
+        searchButton.classList.toggle("search-animation")
+    }
+})
