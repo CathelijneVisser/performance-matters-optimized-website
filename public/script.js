@@ -1,20 +1,23 @@
 // More info button
+
+// zoek het sz-id uit de dataset van het infoIcon adhv event.target
+// combineer het id met sz-id-[betreffende-id]
+// document.querysel op de class in stap 2
+// toggle de gewenste class op het element
+
 const infoIcons = document.querySelectorAll(".info-icon")
-// const infoTexts = document.querySelector(".sz-id-<%= smartzone.id %>")
 
 infoIcons.forEach(infoIcon => {
     infoIcon.addEventListener("click", (event) => {
         const moreInfoText = document.getElementById(infoIcon.dataset.szid);
 
         moreInfoText.classList.toggle("show-more-info")
-        // zoek het sz-id uit de dataset van het infoIcon adhv event.target
-        // combineer het id met sz-id-[betreffende-id]
-        // document.querysel op de class in stap 2
-        // toggle de gewenste class op het element
     })
 })
 
+
 // Like button
+
 const likeButtons = document.querySelectorAll(".favorite-button")
 
 likeButtons.forEach(likeButton => {
@@ -27,6 +30,7 @@ likeButtons.forEach(likeButton => {
 })
 
 // Search button
+
 const searchButtons = document.querySelectorAll(".search-button")
 
 searchButtons.forEach(searchButton => {
@@ -38,19 +42,21 @@ searchButtons.forEach(searchButton => {
     }
 })
 
+// Current date
 
-// Huidige datum automatisch inladen
 const dateInput = document.getElementById("date-from");
 const dateOutput = document.getElementById("date-till");
 
-// Automatisch einddatum meeveranderen
+// Automaticly change ending date
+
 if(dateInput){
     dateInput.onchange = () => {
         dateOutput.value = dateInput.value
     }
 }
 
-// Invalid
+// Invalid state form
+
 const inputs = document.querySelectorAll("input, select, textarea")
 
 inputs.forEach(input => {
@@ -64,12 +70,7 @@ inputs.forEach(input => {
 });
 
 
-
-
-
-
-
-//map
+// Map
 
 var map = L.map('map').setView([52.2129919, 5.2793703], 7)
 
@@ -79,7 +80,7 @@ L.tileLayer('https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=6w
 }).addTo(map)
 
 
-//icon maken
+// Custom marker map
 
 var markerIcon = L.icon({
     iconUrl: 'assets/img/Icon_search.svg',
@@ -88,7 +89,7 @@ var markerIcon = L.icon({
     iconAnchor:  [0, 0],
 })
 
-//longitude latitude
+// Longitude, latitude
 
 var WicherLat = [51.915775, 4.477979]
 var WafaLat = [51.9200524, 4.4660027]
@@ -96,7 +97,7 @@ var KarelLat = [52.3653432, 4.864459999999999]
 var AhmedLat = [51.91511389999999, 4.3975444]
 var ManonLat = [51.9147605, 4.398279]
 
-//markers maken
+// Markers
 
 var Wicher = L.marker(WicherLat, {icon: markerIcon})
 var Wafa = L.marker(WafaLat, {icon: markerIcon})
@@ -105,7 +106,7 @@ var Ahmed = L.marker(AhmedLat, {icon: markerIcon})
 var Manon = L.marker(ManonLat, {icon: markerIcon})
 var markers = L.layerGroup([Wicher, Wafa, Karel, Ahmed, Manon]).addTo(map)
 
-//link to zone
+// Link to zone
 
 var searchButton = document.querySelectorAll(".search-button")
 
@@ -209,7 +210,3 @@ searchButton.forEach(button => {
 //         []  //linksonder
 //     ]).addTo(map)
 // }
-
-
-
-
