@@ -180,12 +180,19 @@ button {
     cursor: pointer;
 }
 
+
+
 .heart-icon path:first-of-type {
     fill: transparent;
+    transition: 0.2s;
 }
 
 .heart-animation {
     animation: like 1s ease-in-out;
+}
+
+.heart-animation svg path:first-of-type {
+    fill: var(--purple-color);
 }
 
 h2 {

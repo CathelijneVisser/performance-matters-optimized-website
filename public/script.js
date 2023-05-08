@@ -44,7 +44,7 @@ const likeButtons = document.querySelectorAll(".favorite-button")
 
 likeButtons.forEach(likeButton => {
     likeButton.addEventListener("click", heartAnimation)
-    likeButton.addEventListener("animationend", heartAnimation)
+    // likeButton.addEventListener("animationend", heartAnimation)
     
     function heartAnimation () {
         likeButton.classList.toggle("heart-animation")
