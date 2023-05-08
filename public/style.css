@@ -1,3 +1,7 @@
+/***********************************************************************************************************************/
+/* Fonts */
+/***********************************************************************************************************************/
+
 @font-face {
     font-family: "Rajhandi";
     src: url("assets/fonts/Rajdhani-SemiBold.ttf") format("ttf"),
@@ -18,6 +22,10 @@
         url("assets/fonts/Rajdhani-Regular.woff") format("woff");
         font-weight: 400;
 }
+
+/***********************************************************************************************************************/
+/* Overall */
+/***********************************************************************************************************************/
 
 :root {
     --purple-color: #524dd0;
@@ -41,6 +49,10 @@
     color: var(--black-color);
 }
 
+/***********************************************************************************************************************/
+/* Custom scrollbar */
+/***********************************************************************************************************************/
+
 ::-webkit-scrollbar {
     width: 5px;
 }
@@ -58,6 +70,10 @@
   background: var(--purple-color); 
 }
 
+/***********************************************************************************************************************/
+/* Basics */
+/***********************************************************************************************************************/
+
 html {
     background-color: var(--bg-blue);
     overflow: hidden;
@@ -74,12 +90,6 @@ body {
     border-radius: 1rem;
     box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px, rgb(0 0 0 / 5%) 0px 4px 6px -2px;
 }
-
-/* main {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-} */
 
 span {
     font-weight: 600;
@@ -100,12 +110,18 @@ button {
     padding: 0;
 }
 
+/***********************************************************************************************************************/
+/* Header */
+/***********************************************************************************************************************/
+
 .logo {
     width: 5rem;
     height: auto;
 }
 
-/* Smartzones */
+/***********************************************************************************************************************/
+/* Zones */
+/***********************************************************************************************************************/
 
 .menu-bar {
     display: flex;
@@ -120,6 +136,8 @@ button {
     color: #bbbbbb;
     margin-bottom: 1rem;
 }
+
+/* Tiles */
 
 .sz-card {
     width: auto;
@@ -136,13 +154,6 @@ button {
 
 .sz-card:first-of-type {
     margin-top: 0;
-}
-
-.info-icon {
-    cursor: pointer;
-    position: absolute;
-    left: 0.5rem;
-    top: 0.5rem;
 }
 
 .sz-card img {
@@ -173,28 +184,6 @@ button {
     align-items: center;
 }
 
-.favorite-button, .search-button {
-    height: fit-content;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-
-
-.heart-icon path:first-of-type {
-    fill: transparent;
-    transition: 0.2s;
-}
-
-.heart-animation {
-    animation: like 1s ease-in-out;
-}
-
-.heart-animation svg path:first-of-type {
-    fill: var(--purple-color);
-}
-
 h2 {
     font-size: 1.2rem;
 }
@@ -221,6 +210,34 @@ h2 {
     background: var(--white-color);
     color: var(--purple-color);
     border: solid 2px var(--purple-color);
+}
+
+/* Icons */
+.info-icon {
+    cursor: pointer;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+}
+
+.favorite-button, .search-button {
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.heart-icon path:first-of-type {
+    fill: transparent;
+    transition: 0.2s;
+}
+
+.heart-animation {
+    animation: like 1s ease-in-out;
+}
+
+.heart-animation svg path:first-of-type {
+    fill: var(--purple-color);
 }
 
 .search-animation {
@@ -262,8 +279,9 @@ h2 {
     display: inline;
 }
 
-
-/* Navigatie */
+/***********************************************************************************************************************/
+/* Navigation */
+/***********************************************************************************************************************/
 
 .nav-list {
     list-style: none;
@@ -280,7 +298,9 @@ h2 {
     text-decoration: none;
 }
 
+/***********************************************************************************************************************/
 /* Map */
+/***********************************************************************************************************************/
 
 #map {
     width: 100%;
@@ -288,7 +308,9 @@ h2 {
     object-fit: cover;
 }
 
+/***********************************************************************************************************************/
 /* Book */
+/***********************************************************************************************************************/
 
 .book {
     padding: 2rem;
@@ -298,6 +320,8 @@ h2 {
 h1 {
     font-size: 2rem;
 }
+
+/* Form */
 
 fieldset:first-of-type {
     margin-top: 0.5rem;
@@ -322,6 +346,23 @@ label {
     margin-bottom: 0.3rem;
 }
 
+.form-date, .form-time {
+    display: flex;
+    width: 22rem;
+    justify-content: space-between;
+}
+
+.form-time {
+    margin-top: 2rem;
+}
+
+.from-till {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input types */
+
 select {
     width: 22rem;
     border: var(--border-form);
@@ -344,25 +385,14 @@ input[type=text], [type=email] {
     cursor: text;
 }
 
+/* Invalid */
+
 input.invalid, select.invalid {
     border: solid 2px red;
     background-color: rgba(255, 0, 0, 0.2);
 }
 
-.form-date, .form-time {
-    display: flex;
-    width: 22rem;
-    justify-content: space-between;
-}
-
-.form-time {
-    margin-top: 2rem;
-}
-
-.from-till {
-    display: flex;
-    flex-direction: column;
-}
+/* Submit */
 
 .submit-button {
     position: relative;
@@ -389,7 +419,10 @@ input.invalid, select.invalid {
     opacity: 1;
 }
 
-/* Grid */
+/***********************************************************************************************************************/
+/* Lay-out */
+/***********************************************************************************************************************/
+
 body {
     display: grid;
     grid-template-columns: 25rem auto;
@@ -412,7 +445,9 @@ nav {
     grid-area: 1 / 2 / 4 / 3 ;
 }
 
-/* Animation */
+/***********************************************************************************************************************/
+/* Animations */
+/***********************************************************************************************************************/
 
 @keyframes like {
     0% {
