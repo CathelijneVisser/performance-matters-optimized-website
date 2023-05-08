@@ -41,24 +41,25 @@ var KarelGroot = L.marker([52.3653432, 4.864459999999999])
 var AhmedGroot = L.marker([51.91511389999999, 4.3975444])
 var ManonGroot = L.marker([51.9147605, 4.398279])
 
-var Wicher = L.polygon([
-    [51.915790, 4.477962],
-    [51.915821, 4.478087],
-    [51.915760, 4.478125],
-    [51.915728, 4.477995]
-])
 
 
 //layers
 
-var markersGroot = L.layerGroup([WicherGroot, WafaGroot, KarelGroot, AhmedGroot, ManonGroot])
-var markersKlein = L.layerGroup([Wicher])
-
-var layerControl = L.control.layers(markersGroot).addTo(map)
+var markersGroot = L.layerGroup([WicherGroot, WafaGroot, KarelGroot, AhmedGroot, ManonGroot]).addTo(map)
 
 
 
 
+// var Wicher = L.polygon([
+//     [51.915790, 4.477962],
+//     [51.915821, 4.478087],
+//     [51.915760, 4.478125],
+//     [51.915728, 4.477995]
+// ]).addTo(map)
+
+
+// var markersKlein = L.layerGroup([Wicher])
+// var layerControl = L.control.layers(markersGroot)
 
 // map.on('zoomend', zoomLevel)
 
