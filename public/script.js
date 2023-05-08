@@ -1,3 +1,44 @@
+// More info button
+const infoIcons = document.querySelectorAll(".info-icon")
+// const infoTexts = document.querySelector(".sz-id-<%= smartzone.id %>")
+
+infoIcons.forEach(infoIcon => {
+    infoIcon.addEventListener("click", (event) => {
+        const moreInfoText = document.getElementById(infoIcon.dataset.szid);
+
+        moreInfoText.classList.toggle("show-more-info")
+        // zoek het sz-id uit de dataset van het infoIcon adhv event.target
+        // combineer het id met sz-id-[betreffende-id]
+        // document.querysel op de class in stap 2
+        // toggle de gewenste class op het element
+    })
+})
+
+// Like button
+const likeButtons = document.querySelectorAll(".favorite-button")
+
+likeButtons.forEach(likeButton => {
+    likeButton.addEventListener("click", heartAnimation)
+    // likeButton.addEventListener("animationend", heartAnimation)
+    
+    function heartAnimation () {
+        likeButton.classList.toggle("heart-animation")
+    }
+})
+
+// Search button
+const searchButtons = document.querySelectorAll(".search-button")
+
+searchButtons.forEach(searchButton => {
+    searchButton.addEventListener("click", searchAnimation)
+    searchButton.addEventListener("animationend", searchAnimation)
+    
+    function searchAnimation () {
+        searchButton.classList.toggle("search-animation")
+    }
+})
+
+
 // Huidige datum automatisch inladen
 const dateInput = document.getElementById("date-from");
 const dateOutput = document.getElementById("date-till");
@@ -22,6 +63,12 @@ inputs.forEach(input => {
     );
 });
 
+
+
+
+
+
+
 //map
 
 var map = L.map('map').setView([52.2129919, 5.2793703], 7)
@@ -34,29 +81,39 @@ L.tileLayer('https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=6w
 
 //icon maken
 
+var markerIcon = L.icon({
+    iconUrl: 'assets/img/Icon_search.svg',
 
+    iconSize:   [15, 19],
+    iconAnchor:  [0, 0],
+})
+
+//longitude latitude
+
+var WicherLat = [51.915775, 4.477979]
+var WafaLat = [51.9200524, 4.4660027]
+var KarelLat = [52.3653432, 4.864459999999999]
+var AhmedLat = [51.91511389999999, 4.3975444]
+var ManonLat = [51.9147605, 4.398279]
 
 //markers maken
 
-var WicherGroot = L.marker([51.915775, 4.477979], {icon: marker})
-var WafaGroot = L.marker([51.9200524, 4.4660027], {icon: marker})
-var KarelGroot = L.marker([52.3653432, 4.864459999999999], {icon: marker})
-var AhmedGroot = L.marker([51.91511389999999, 4.3975444], {icon: marker})
-var ManonGroot = L.marker([51.9147605, 4.398279], {icon: marker})
+var Wicher = L.marker(WicherLat, {icon: markerIcon})
+var Wafa = L.marker(WafaLat, {icon: markerIcon})
+var Karel = L.marker(KarelLat, {icon: markerIcon})
+var Ahmed = L.marker(AhmedLat, {icon: markerIcon})
+var Manon = L.marker(ManonLat, {icon: markerIcon})
+var markers = L.layerGroup([Wicher, Wafa, Karel, Ahmed, Manon]).addTo(map)
 
+//link to zone
 
+var searchButton = document.querySelectorAll(".search-button")
 
-//layers
-
-var markersGroot = L.layerGroup([WicherGroot, WafaGroot, KarelGroot, AhmedGroot, ManonGroot]).addTo(map)
-
-
-
-
-
-
-
-
+searchButton.forEach(button => {
+    button.addEventListener("click", () => {
+        map.flyTo(ManonLat, 16)
+    })
+});
 
 
 
@@ -156,53 +213,3 @@ var markersGroot = L.layerGroup([WicherGroot, WafaGroot, KarelGroot, AhmedGroot,
 
 
 
-inputs.forEach(input => { 
-    input.addEventListener( 
-        "invalid", 
-        event => { 
-            input.classList.add("invalid"); 
-        }, 
-        false 
-    ); 
-});
-
-// More info button
-const infoIcons = document.querySelectorAll(".info-icon")
-// const infoTexts = document.querySelector(".sz-id-<%= smartzone.id %>")
-
-infoIcons.forEach(infoIcon => {
-    infoIcon.addEventListener("click", (event) => {
-        const moreInfoText = document.getElementById(infoIcon.dataset.szid);
-
-        moreInfoText.classList.toggle("show-more-info")
-        console.log(moreInfoText.offsetHeight)
-        // zoek het sz-id uit de dataset van het infoIcon adhv event.target
-        // combineer het id met sz-id-[betreffende-id]
-        // document.querysel op de class in stap 2
-        // toggle de gewenste class op het element
-    })
-})
-
-// Like button
-const likeButtons = document.querySelectorAll(".favorite-button")
-
-likeButtons.forEach(likeButton => {
-    likeButton.addEventListener("click", heartAnimation)
-    // likeButton.addEventListener("animationend", heartAnimation)
-    
-    function heartAnimation () {
-        likeButton.classList.toggle("heart-animation")
-    }
-})
-
-// Search button
-const searchButtons = document.querySelectorAll(".search-button")
-
-searchButtons.forEach(searchButton => {
-    searchButton.addEventListener("click", searchAnimation)
-    searchButton.addEventListener("animationend", searchAnimation)
-    
-    function searchAnimation () {
-        searchButton.classList.toggle("search-animation")
-    }
-})
