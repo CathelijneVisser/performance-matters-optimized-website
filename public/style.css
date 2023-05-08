@@ -86,8 +86,6 @@ span {
 }
 
 header {
-    height: 7rem;
-    width: 22rem;
     background-color: var(--bg-grey);
     display: flex;
     justify-content: center;
@@ -95,14 +93,21 @@ header {
     border-radius: 1rem 0 0 0;
 }
 
+button {
+    border: none;
+    background: none;
+    border-radius: 0;
+    padding: 0;
+}
+
 .logo {
     width: 5rem;
     height: auto;
 }
 
+/* Smartzones */
+
 .menu-bar {
-    width: 22rem;
-    height: auto;
     display: flex;
     flex-direction: column;
     padding: 0 1rem;
@@ -120,11 +125,24 @@ header {
     width: auto;
     height: 10rem;
     display: flex;
-    justify-content: space-between;
+    gap: 1rem;
     border-radius: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
     box-shadow: 1px 3px 2px #bbbbbb;
     background-color: var(--white-color);
+    position: relative;
+    z-index: 1;
+}
+
+.sz-card:first-of-type {
+    margin-top: 0;
+}
+
+.info-icon {
+    cursor: pointer;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
 }
 
 .sz-card img {
@@ -138,8 +156,15 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 12rem;
-    padding: 0.5rem 0;
+    width: 15rem;
+    padding: 0.5rem;
+    padding-left: 0;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .availability {
@@ -148,12 +173,37 @@ header {
     align-items: center;
 }
 
+.favorite-button, .search-button {
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+
+.heart-icon path:first-of-type {
+    fill: transparent;
+    transition: 0.2s;
+}
+
+.heart-animation {
+    animation: like 1s ease-in-out;
+}
+
+.heart-animation svg path:first-of-type {
+    fill: var(--purple-color);
+}
+
 h2 {
     font-size: 1.2rem;
 }
 
-.buttons {
+.bottom-row-card {
+    display: flex;
     flex-direction: row;
+    gap: 0.5rem;
+    justify-content: space-between;
 }
 
 .button-book-now, .button-book-later, .submit-button, .submit-button::before {
@@ -162,7 +212,7 @@ h2 {
     border: none;
     font-weight: 600;
     border-radius: 1rem;
-    padding: 0.1rem 0.7rem;
+    padding: 0 0.7rem;
     cursor: pointer;
     text-decoration: none;
 }
@@ -173,12 +223,52 @@ h2 {
     border: solid 2px var(--purple-color);
 }
 
+.search-animation {
+    animation: search 1s ease-in-out;
+}
+
+/* More info slide */
+.more-info {
+    background-color: var(--white-color);
+    min-height: 10rem;
+    padding: 0.5rem 1rem;
+    padding-top: 4rem;
+    margin-top: -10rem;
+    border-radius: 1rem;
+    box-shadow: 1px 3px 2px #bbbbbb;
+    position: relative;
+    z-index: 0;
+    bottom: 0;
+    /* transform: translateY(-9rem); */
+    transition: margin 1s ease-in-out;
+    /* display: none; */
+}
+
+.more-info:last-of-type {
+    margin-bottom: 1rem;
+}
+
+.show-more-info {
+    /* transform: translateY(-2rem); */
+    margin-top: -3rem;
+    /* display: block; */
+}
+
+.more-info p {
+    line-height: 1.7;
+}
+
+.more-info p:nth-of-type(3), .more-info p:nth-of-type(4) {
+    display: inline;
+}
+
+
 /* Navigatie */
 
 .nav-list {
     list-style: none;
     display: flex;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     justify-content: space-between;
     background-color: var(--bg-grey);
 }
@@ -302,7 +392,7 @@ input.invalid, select.invalid {
 /* Grid */
 body {
     display: grid;
-    grid-template-columns: 22rem auto;
+    grid-template-columns: 25rem auto;
     grid-template-rows: 7rem auto 4rem;
 }
 
@@ -320,4 +410,46 @@ nav {
 
 .map, .book {
     grid-area: 1 / 2 / 4 / 3 ;
+}
+
+/* Animation */
+
+@keyframes like {
+    0% {
+        scale: 1;
+    }
+
+    30% {
+        scale: 0.9;
+        rotate: -10deg;
+    }
+
+    60% {
+        scale: 1.2;
+        rotate: 5deg;
+    }
+
+    100% {
+        fill: var(--purple-color);
+        scale: 1;
+        rotate: 0;
+    }
+}
+
+@keyframes search {
+    0% {
+        transform: scaleY(1);
+    }
+
+    30% {
+        transform: scaleY(0.8);
+    }
+
+    60% {
+        transform: scaleY(1.1) translateY(-5px);
+    }
+
+    100% {
+        transform: scaleY(1) translateY(0);
+    }
 }
