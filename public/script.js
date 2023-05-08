@@ -32,20 +32,37 @@ L.tileLayer('https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=6w
 }).addTo(map)
 
 
+//icon maken
+
+
 
 //markers maken
 
-var WicherGroot = L.marker([51.915775, 4.477979])
-var WafaGroot = L.marker([51.9200524, 4.4660027])
-var KarelGroot = L.marker([52.3653432, 4.864459999999999])
-var AhmedGroot = L.marker([51.91511389999999, 4.3975444])
-var ManonGroot = L.marker([51.9147605, 4.398279])
+var WicherGroot = L.marker([51.915775, 4.477979], {icon: marker})
+var WafaGroot = L.marker([51.9200524, 4.4660027], {icon: marker})
+var KarelGroot = L.marker([52.3653432, 4.864459999999999], {icon: marker})
+var AhmedGroot = L.marker([51.91511389999999, 4.3975444], {icon: marker})
+var ManonGroot = L.marker([51.9147605, 4.398279], {icon: marker})
 
 
 
 //layers
 
 var markersGroot = L.layerGroup([WicherGroot, WafaGroot, KarelGroot, AhmedGroot, ManonGroot]).addTo(map)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
