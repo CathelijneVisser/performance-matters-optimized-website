@@ -1,12 +1,13 @@
 <section class="menu-bar">
         <h2 class="title-zones">Smartzones</h2>
 
+        
         <% smartzones.forEach(smartzone => { %>
             <article class="sz-card">
                 <div class="card-left-side">
                     <picture>
                         <source srcset="<%- smartzone.image[0].originalAsWebP %>" type="image/webp">
-                        <img src="<%- smartzone.image[0].url %>" alt="Foto van de locatie van smartzone <%= smartzone.name %>" loading="lazy" width="<%= smartzone.image.width %>" height="<%= smartzone.image.height %>">
+                        <img src="<%- smartzone.image[0].url %>" alt="Foto van de locatie van smartzone <%= smartzone.name %>" loading="lazy" width="<%= smartzone.image[0].width %>" height="<%= smartzone.image[0].height %>">
                     </picture>
                     <button class="info-icon" data-szId="<%= smartzone.id %>" aria-label="More information">
                         <svg width="25" height="25" viewBox="0 0 21 21" fill="#fff" xmlns="http://www.w3.org/2000/svg">
