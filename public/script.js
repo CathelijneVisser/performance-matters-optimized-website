@@ -111,8 +111,30 @@ var markers = L.layerGroup([Wicher, Wafa, Karel, Ahmed, Manon]).addTo(map)
 var searchButton = document.querySelectorAll(".search-button")
 
 searchButton.forEach(button => {
-    button.addEventListener("click", () => {
-        map.flyTo(ManonLat, 16)
+    button.addEventListener("click", function() {
+        const data = this.dataset.point
+
+        if (data == "Wicher") {
+             map.flyTo(WicherLat, 16)
+        }
+
+        if (data == "Wafa") {
+             map.flyTo(WafaLat, 16)
+        }
+
+        if (data == "Karel") {
+             map.flyTo(KarelLat, 16)
+        }
+
+        if (data == "Ahmed") {
+             map.flyTo(AhmedLat, 16)
+        }
+
+        if (data == "Manon") {
+             map.flyTo(ManonLat, 16)
+        }
+
+
     })
 });
 
