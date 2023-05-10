@@ -1,10 +1,5 @@
 // More info button
 
-// zoek het sz-id uit de dataset van het infoIcon adhv event.target
-// combineer het id met sz-id-[betreffende-id]
-// document.querysel op de class in stap 2
-// toggle de gewenste class op het element
-
 const infoIcons = document.querySelectorAll(".info-icon")
 
 infoIcons.forEach(infoIcon => {
@@ -22,12 +17,12 @@ const likeButtons = document.querySelectorAll(".favorite-button")
 
 likeButtons.forEach(likeButton => {
     likeButton.addEventListener("click", heartAnimation)
-    // likeButton.addEventListener("animationend", heartAnimation)
     
     function heartAnimation () {
         likeButton.classList.toggle("heart-animation")
     }
 })
+
 
 // Search button
 
@@ -42,6 +37,7 @@ searchButtons.forEach(searchButton => {
     }
 })
 
+
 // Current date
 
 const dateInput = document.getElementById("date-from");
@@ -54,6 +50,7 @@ if(dateInput){
         dateOutput.value = dateInput.value
     }
 }
+
 
 // Invalid state form
 
@@ -79,12 +76,10 @@ L.tileLayer('https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=6w
     attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
 }).addTo(map)
 
-
 // Custom marker map
 
 var markerIcon = L.icon({
     iconUrl: 'assets/img/Icon_search.svg',
-
     iconSize:   [15, 19],
     iconAnchor:  [0, 0],
 })
