@@ -4,9 +4,6 @@
   "description": "Sprint 11",
   "main": "server.js",
   "type": "module",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
