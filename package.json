@@ -1,7 +1,7 @@
 {
   "name": "connecting-people-realtime-web-app",
   "version": "1.0.0",
-  "description": "Sprint 10",
+  "description": "Sprint 11",
   "main": "server.js",
   "type": "module",
   "directories": {
